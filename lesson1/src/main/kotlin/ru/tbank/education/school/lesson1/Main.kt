@@ -1,10 +1,8 @@
 package ru.tbank.education.school.lesson1
 
+import java.util.Objects
+
 fun main() {
-<<<<<<< HEAD
-    print("Hello World!")
-    println("Hello World!")
-<<<<<<< HEAD
 
     var a: Short? = 123
     val b = "s"
@@ -59,16 +57,4 @@ fun main() {
     }
 
     throw IllegalArgumentException("")
-=======
-    val a = 1
-    println("value of a = $a")
-    var b = 2
-    println("value of b = $b")
-    b++
-    println("value of b = $b")
-    val c: Short? = null
-    println("value of c = $c")
->>>>>>> parent of 7825744 (Merge remote-tracking branch 'upstream/master')
-=======
->>>>>>> parent of 073bc22 (материалы 1 и 2 занятия)
 }
