@@ -3,6 +3,7 @@ package ru.tbank.education.school.lesson1
 fun main() {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     var a: Short? = 123
     val b = "s"
@@ -57,6 +58,10 @@ fun main() {
     }
 
     throw IllegalArgumentException("")
+=======
+    print("Hello World!")
+    println("Hello World!")
+>>>>>>> parent of 073bc22 (материалы 1 и 2 занятия)
 =======
     print("Hello World!")
     println("Hello World!")
