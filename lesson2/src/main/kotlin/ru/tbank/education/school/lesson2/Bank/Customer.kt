@@ -1,6 +1,2 @@
-package ru.tbank.education.school.lesson2
+package ru.tbank.education.school.lesson2.bank 
 
-data class Customer(
-    val id: String
-    val fullname: String
-)
