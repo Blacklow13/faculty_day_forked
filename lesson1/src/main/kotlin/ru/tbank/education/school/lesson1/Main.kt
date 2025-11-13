@@ -2,6 +2,7 @@ package ru.tbank.education.school.lesson1
 
 fun main() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     var a: Short? = 123
     val b = "s"
