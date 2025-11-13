@@ -69,4 +69,6 @@ fun main() {
     val c: Short? = null
     println("value of c = $c")
 >>>>>>> parent of 7825744 (Merge remote-tracking branch 'upstream/master')
+=======
+>>>>>>> parent of 073bc22 (материалы 1 и 2 занятия)
 }
