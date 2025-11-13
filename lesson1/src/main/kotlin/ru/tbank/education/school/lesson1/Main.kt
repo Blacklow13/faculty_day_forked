@@ -4,6 +4,7 @@ fun main() {
 <<<<<<< HEAD
     print("Hello World!")
     println("Hello World!")
+<<<<<<< HEAD
 
     var a: Short? = 123
     val b = "s"
