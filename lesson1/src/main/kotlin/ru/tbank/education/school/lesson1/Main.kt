@@ -61,4 +61,8 @@ fun main() {
     print("Hello World!")
     println("Hello World!")
 >>>>>>> parent of 073bc22 (материалы 1 и 2 занятия)
+=======
+    print("Hello World!")
+    println("Hello World!")
+>>>>>>> parent of 073bc22 (материалы 1 и 2 занятия)
 }

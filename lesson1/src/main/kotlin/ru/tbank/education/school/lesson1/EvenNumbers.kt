@@ -15,4 +15,8 @@ fun main(){
 fun sumEvenNumbers(numbers: Array<Int>): Int {
     TODO()
 >>>>>>> parent of 073bc22 (материалы 1 и 2 занятия)
+=======
+fun sumEvenNumbers(numbers: Array<Int>): Int {
+    TODO()
+>>>>>>> parent of 073bc22 (материалы 1 и 2 занятия)
 }
