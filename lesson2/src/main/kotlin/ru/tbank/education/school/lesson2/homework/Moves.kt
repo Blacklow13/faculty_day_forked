@@ -7,14 +7,14 @@ abstract class Move {
 }
 
 class Tackle: Move(){
-    val power: Int = 40
+    val power: Int = 30
     override val description = ""
     override fun use_movement(user: Pokemon, target: Pokemon) {
         target.hp -= power * (user.atk) / target.def
     }
 }
 class WaterGun: Move(){
-    val power: Int = 40
+    val power: Int = 30
     override val description = ""
     override fun use_movement(user: Pokemon, target: Pokemon) {
         if (target.type == "fire")
@@ -26,7 +26,7 @@ class WaterGun: Move(){
 }
 
 class VineWhip: Move(){
-    val power: Int = 45
+    val power: Int = 35
     override val description = ""
     override fun use_movement(user: Pokemon, target: Pokemon) {
         if (target.type == "water")
@@ -38,7 +38,7 @@ class VineWhip: Move(){
 }
 
 class Ember: Move(){
-    val power: Int = 40
+    val power: Int = 30
     override val description = ""
     override fun use_movement(user: Pokemon, target: Pokemon) {
         if (target.type == "grass")

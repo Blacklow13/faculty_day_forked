@@ -34,7 +34,7 @@ class BulbasaurDescription : ClassesDescriptions(){
     override fun choose_move(User: Pokemon, Target: Pokemon){
         val scanner = Scanner(System.`in`)
         println("""
-            Choose move and enter num 1-4:
+            Choose move and enter num 1-2:
             Tackle | Vine Whip 
         """.trimIndent())
         val move: String = scanner.nextLine()
@@ -64,7 +64,7 @@ class CharmanderDescription() : ClassesDescriptions(){
     override fun choose_move(User: Pokemon, Target: Pokemon){
         val scanner = Scanner(System.`in`)
         println("""
-            Choose move and enter num 1-4:
+            Choose move and enter num 1-2:
             Tackle | Ember 
         """.trimIndent())
         val move: String = scanner.nextLine()
@@ -94,7 +94,7 @@ class SquirtleDescription : ClassesDescriptions(){
     override fun choose_move(User: Pokemon, Target: Pokemon){
         val scanner = Scanner(System.`in`)
         println("""
-            Choose move and enter num 1-4:
+            Choose move and enter num 1-2:
             Tackle | Water Gun 
         """.trimIndent())
         val move: String = scanner.nextLine()
