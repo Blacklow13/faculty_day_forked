@@ -7,7 +7,7 @@ class Dispatcher(val Player1: Player, val Player2: Player) {
     fun game(){
         while (Player1.pokemon.hp > 0 && Player2.pokemon.hp > 0){
             println("done")
-            if (Player1.pokemon.speed > Player2.pokemon.speed){
+            if (Player1.pokemon.speed >= Player2.pokemon.speed){
                 println("${Player1.name}'s turn")
                 displays_hp()
                 Player1.make_a_move(Player1.pokemon, Player2.pokemon)
@@ -55,8 +55,8 @@ class Dispatcher(val Player1: Player, val Player2: Player) {
         if(Player2.pokemon.hp < 0){
             Player2.pokemon.hp = 0.0
         }
-        println("${Player1.pokemon.name} - ${Player1.pokemon.hp}/${Player1.pokemon.get_base_hp()}")
-        println("${Player2.pokemon.name} - ${Player2.pokemon.hp}/${Player2.pokemon.get_base_hp()}")
+        println("${Player1.pokemon.name} - ${Player1.pokemon.hp}/${Player1.pokemon.get_base_hp()} hp")
+        println("${Player2.pokemon.name} - ${Player2.pokemon.hp}/${Player2.pokemon.get_base_hp()} hp")
     }
 
 }
