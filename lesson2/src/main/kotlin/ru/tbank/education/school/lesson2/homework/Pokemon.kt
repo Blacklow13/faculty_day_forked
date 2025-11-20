@@ -1,4 +1,5 @@
 package ru.tbank.education.school.lesson2.homework
+import kotlin.math.round
 
 class Pokemon(_pokClass: String) {
     val pokClass: String = _pokClass
@@ -6,7 +7,16 @@ class Pokemon(_pokClass: String) {
     var speed: Int = 0
     var type: String = ""
     var hp: Double = 0.0
-    var base_hp: Double = 0.0
+        get(): Double{
+            return round(field * 10).toDouble() / 10
+        }
+
+        set(value){
+            if (value <= base_hp){
+                field = value
+            }
+        }
+    private var base_hp: Double = 0.0
     var atk: Double = 0.0
     var def: Double = 0.0
     var description: String = ""
@@ -18,8 +28,8 @@ class Pokemon(_pokClass: String) {
             "1" -> {
                 val desc = CharmanderDescription()
                 type = desc.type
-                hp = desc.base_hp
                 base_hp = desc.base_hp
+                hp = desc.base_hp
                 atk = desc.base_atk
                 def = desc.base_def
                 description = desc.description
@@ -60,6 +70,11 @@ class Pokemon(_pokClass: String) {
     fun get_info(){
         println(description)
     }
+
+    fun get_base_hp(): Double {
+        return base_hp
+    }
+
 
 
 }

@@ -44,10 +44,8 @@ class Dispatcher(val Player1: Player, val Player2: Player) {
     }
 
     fun game_end(Winner: Player){
-        println("""
-        ${Winner.name} won in the game
-        Congrats to ${Winner.name}
-        """.trimMargin())
+        println("${Winner.name} won in the game")
+        println("Congrats to ${Winner.name}")
     }
 
     fun displays_hp(){
@@ -57,8 +55,8 @@ class Dispatcher(val Player1: Player, val Player2: Player) {
         if(Player2.pokemon.hp < 0){
             Player2.pokemon.hp = 0.0
         }
-        println("${Player1.pokemon.name} - ${Player1.pokemon.hp}/${Player1.pokemon.base_hp}")
-        println("${Player1.pokemon.name} - ${Player1.pokemon.hp}/${Player1.pokemon.base_hp}")
+        println("${Player1.pokemon.name} - ${Player1.pokemon.hp}/${Player1.pokemon.get_base_hp()}")
+        println("${Player2.pokemon.name} - ${Player2.pokemon.hp}/${Player2.pokemon.get_base_hp()}")
     }
 
 }

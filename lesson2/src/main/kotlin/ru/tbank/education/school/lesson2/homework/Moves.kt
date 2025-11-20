@@ -6,45 +6,52 @@ abstract class Move {
     abstract fun use_movement(user: Pokemon, target: Pokemon)
 }
 
-class Tackle: Move(){
-    val power: Int = 30
-    override val description = ""
+open class DamageMove: Move(){
+    open val power: Int = 30
+    override val description = "This move hits with power${power}"
     override fun use_movement(user: Pokemon, target: Pokemon) {
         target.hp -= power * (user.atk) / target.def
     }
 }
-class WaterGun: Move(){
-    val power: Int = 30
-    override val description = ""
+
+class Tackle: DamageMove(){
+    override val power: Int = 35
+
+}
+
+class WaterGun: DamageMove(){
     override fun use_movement(user: Pokemon, target: Pokemon) {
         if (target.type == "fire")
             target.hp -= power * (user.atk) / target.def * 2
         else if (target.type == "grass"){
             target.hp -= power * (user.atk) / target.def * 0.5
+        }else{
+            super.use_movement(user, target)
         }
     }
 }
 
-class VineWhip: Move(){
-    val power: Int = 35
-    override val description = ""
+class VineWhip: DamageMove(){
+    override val power: Int = 35
     override fun use_movement(user: Pokemon, target: Pokemon) {
         if (target.type == "water")
             target.hp -= power * (user.atk) / target.def * 2
         else if (target.type == "fire"){
             target.hp -= power * (user.atk) / target.def * 0.5
+        }else{
+            super.use_movement(user, target)
         }
     }
 }
 
-class Ember: Move(){
-    val power: Int = 30
-    override val description = ""
+class Ember: DamageMove(){
     override fun use_movement(user: Pokemon, target: Pokemon) {
         if (target.type == "grass")
             target.hp -= power * (user.atk) / target.def * 2
         else if (target.type == "water"){
             target.hp -= power * (user.atk) / target.def * 0.5
+        }else{
+            super.use_movement(user, target)
         }
     }
 }
