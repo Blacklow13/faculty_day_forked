@@ -6,7 +6,6 @@ import java.util.Scanner;
 class Dispatcher(val Player1: Player, val Player2: Player) {
     fun game(){
         while (Player1.pokemon.hp > 0 && Player2.pokemon.hp > 0){
-            println("done")
             if (Player1.pokemon.speed >= Player2.pokemon.speed){
                 println("${Player1.name}'s turn")
                 displays_hp()
