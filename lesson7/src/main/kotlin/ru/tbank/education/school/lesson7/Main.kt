@@ -1,5 +1,7 @@
 package ru.tbank.education.school.lesson7
 
+
+
 data class User(
     val name: String,
     val orders: List<Order>
@@ -29,6 +31,7 @@ fun task() {
             )
         )
     )
+    println(users.flatMap { it.orders })
 }
 
 
@@ -36,6 +39,8 @@ fun task() {
 fun task2() {
     val months = listOf("Янв", "Фев", "Мар", "Апр", "Май")
     val revenue = listOf(1000, 1200, 800, 1400, 1300)
+    val res = months.zip(revenue){ a, b -> a + "-" + b}
+    println(res)
 }
 
 // Задание 3 - выведите id всех заказов, которые были доставлены и оплачены на сумму > 1000
@@ -46,6 +51,7 @@ fun task3() {
         Order(id = 3, product = "Рюкзак", amount = 1000, isPaid = true, isDelivered = true),
         Order(id = 4, product = "Кружка", amount = 500, isPaid = false, isDelivered = false)
     )
+    println(orders.filter{it.isDelivered and it.isPaid and (it.amount >= 1000)}.map{it.id})
 }
 
 
@@ -189,4 +195,6 @@ interface Function2<in P1, in P2, out R> {
 
 
 fun main() {
+
+    task3()
 }
