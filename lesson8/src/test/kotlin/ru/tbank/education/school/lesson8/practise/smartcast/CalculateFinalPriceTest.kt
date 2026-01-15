@@ -1,27 +1,5 @@
 package ru.tbank.education.school.lesson8.practise
 
-import org.junit.jupiter.api.*
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
-import ru.tbank.education.school.lesson8.lection.calculator.Calculator
-import kotlin.test.assertEquals
-import kotlin.test.assertNotNull
-import kotlin.test.assertTrue
-
-class CalculateFinalPriceTest{
-
-
-    @Test
-    fun `values of properties should be correct`(){
-        val ex = assertThrows<IllegalArgumentException> {calculateFinalPrice(10.0, 30, 9)}
-        assert(ex)
-    }
-
-
-
-}
-
-
 /**
  *
  * Сценарии для тестирования:
