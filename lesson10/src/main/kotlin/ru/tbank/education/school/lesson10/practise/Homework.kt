@@ -6,7 +6,9 @@ import java.time.Month
 import java.time.Period
 import java.time.Period.*
 import java.time.format.DateTimeFormatter
-import kotlin.time.Duration
+import java.time.Duration
+import kotlin.math.abs
+
 import kotlin.Int
 
 fun main(){
@@ -60,17 +62,31 @@ fun main(){
     println("normalized strings ${e}")
     println("broken strings ${brokenStrings}")
 
-    var dataGroupedById : MutableMap<String, MutableList<Pair<String, LocalDate>>> = mutableMapOf()
+    var dataGroupedById : MutableMap<String, MutableList<Pair<String, LocalDateTime>>> = mutableMapOf()
     val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
 
     e.forEach {
         dataGroupedById[it!!["id"] as String] = dataGroupedById.getOrDefault(it!!["id"] as String, mutableListOf())
         dataGroupedById[it!!["id"] as String]!!.add(Pair("status=${it!!["status"] as String} time=${it!!["dt"]}",
-            LocalDate.parse(it["dt"], formatter)))
+            LocalDateTime.parse(it["dt"], formatter)))
         println(it)
 
     }
     println(dataGroupedById)
 
+    var deliveryDur : MutableMap<String, Long> = mutableMapOf()
+    dataGroupedById.entries.forEach {
+        println(it.value[1].second)
+        deliveryDur!![it.key] = abs(Duration.between(it.value[1].second, it.value[0].second).seconds / 60)
+    }
+    println(deliveryDur)
 
+    var deliveryDurList : List<Pair<String, Long>> = deliveryDur.toList()
+        .sortedBy { (_, duration) -> duration }
+
+    println(deliveryDurList)
+    println("Longest delivery id=${deliveryDurList[deliveryDurList.size - 1].first} duration=${deliveryDurList[deliveryDurList.size - 1].second}m")
+
+    var violationDeliveries = deliveryDurList.filter { it.second > 20 }
+    println("Violations ${violationDeliveries}")
 }
